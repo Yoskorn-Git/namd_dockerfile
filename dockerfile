@@ -7,8 +7,8 @@ RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 
 RUN apt-get install -y cmake
 
-RUN mkdir cluster/thor/code
-RUN mkdir cluster/thor/application/mpi
+RUN mkdir /cluster/thor/code
+RUN mkdir /cluster/thor/application/mpi
 
 RUN	git clone --bare https://github.com/UIUC-PPL/charm.git	\
 	$HOME/github/charm.git 
