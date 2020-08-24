@@ -7,10 +7,12 @@ RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 
 RUN apt-get install -y cmake
 
-RUN mkdir /cluster/thor/code
-RUN mkdir /cluster/thor/application/mpi
-
-RUN	git clone --bare https://github.com/UIUC-PPL/charm.git	\
+RUN mkdir /home/cluster \
+    mkdir /home/cluster/thor \
+    mkdir /home/cluster/thor/application \
+    mkdir /home/cluster/thor/application/mpi 
+	
+RUN git clone --bare https://github.com/UIUC-PPL/charm.git	\
 	$HOME/github/charm.git 
 
 RUN git clone --bare https://charm.cs.illinois.edu/gerrit/namd.git \			
