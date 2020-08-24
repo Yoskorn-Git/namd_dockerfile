@@ -27,8 +27,8 @@ RUN wget http://content.mellanox.com/hpc/hpc-x/v2.6/hpcx-v2.6.0-gcc-MLNX_OFED_LI
 RUN wget http://www.fftw.org/fftw-3.3.8.tar.gz
 
 #Untar hpcx v2.6.0
-RUN tar -xf /home/code/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz /home/cluster/thor/application/mpi
-
+RUN	cd /home/cluster/thor/application/mpi
+RUN tar -xf hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz
 
 #Download Intel parallel studio XE 2020 update 1
 RUN	cd / && mkdir download && cd download
