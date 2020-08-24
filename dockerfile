@@ -8,9 +8,9 @@ RUN apt-get install -y gcc-8
 RUN apt-get install -y cmake
 
 RUN mkdir /home/cluster \
-    mkdir /home/cluster/thor \
-    mkdir /home/cluster/thor/application \
-    mkdir /home/cluster/thor/application/mpi 
+    && mkdir /home/cluster/thor \
+    && mkdir /home/cluster/thor/application \
+    && mkdir /home/cluster/thor/application/mpi 
 	
 RUN git clone --bare https://github.com/UIUC-PPL/charm.git	\
 	$HOME/github/charm.git 
