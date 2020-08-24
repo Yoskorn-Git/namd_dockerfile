@@ -7,7 +7,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 
 RUN apt-get install -y cmake
 
-RUN	cd $HOME /
+RUN	cd /
 RUN mkdir cluster && cd cluster 
 RUN mkdir thor && cd thor
 RUN mkdir code && cd .. 
