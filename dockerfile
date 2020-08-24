@@ -4,8 +4,8 @@ FROM ubuntu:18.04
 RUN	apt-get update 
 RUN apt-get install -y git 
 RUN apt-get install -y wget 
-RUN install -y gcc-8 
-RUN install -y cmake
+RUN apt-get install -y gcc-8 
+RUN apt-get install -y cmake
 
 RUN	cd $HOME /
 RUN cluster && cd cluster 
