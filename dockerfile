@@ -31,9 +31,9 @@ RUN	cd /home/cluster/thor/application/mpi \
     && tar -xvf hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz 
 
 #Download Intel parallel studio XE 2020 update 1
-RUN	mkdir /home/download && cd /home/download 
-    # && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
-    # && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz
+RUN	mkdir /home/download && cd /home/download \
+    && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
+    && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz
 
 #Install libs (PSXE needed)
 RUN apt-get install -y cpio
