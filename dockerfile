@@ -8,6 +8,14 @@ RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 g++-8
 RUN apt-get install -y cmake
 
+#Install libs (PSXE needed)
+RUN apt-get install -y libgtk2.0
+RUN apt-get install -y cpio
+RUN apt-get install -y libgtk-3*
+RUN apt-get install -y libxss1*
+RUN apt-get install -y libnss3
+RUN apt-get install -y libasound2
+
 #Set up directory
 RUN mkdir /home/cluster \
     && mkdir /home/cluster/thor \
@@ -29,14 +37,6 @@ RUN	mkdir /home/code && cd /home/code \
 RUN	cd /home/cluster/thor/application/mpi \
     && wget http://content.mellanox.com/hpc/hpc-x/v2.6/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz \
     && tar -xvf hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz 
-
-#Install libs (PSXE needed)
-RUN apt-get install -y libgtk2.0
-RUN apt-get install -y cpio
-RUN apt-get install -y libgtk-3*
-RUN apt-get install -y libxss1*
-RUN apt-get install -y libnss3
-RUN apt-get install -y libasound2
 
 #Download Intel parallel studio XE 2020 update 1
 RUN	mkdir /home/download && cd /home/download \
