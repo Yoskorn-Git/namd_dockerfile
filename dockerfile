@@ -9,7 +9,7 @@ RUN apt-get install -y gcc-8 g++-8
 RUN apt-get install -y cmake
 
 #Install libs (PSXE needed)
-RUN apt-get install -y libgtk2.0
+#RUN apt-get install -y libgtk2.0
 RUN apt-get install -y cpio
 RUN apt-get install -y libgtk-3*
 RUN apt-get install -y libxss1*
