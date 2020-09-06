@@ -31,7 +31,7 @@ RUN	cd /home/cluster/thor/application/mpi \
     && tar -xvf hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz 
 
 #Install libs (PSXE needed)
-RUN apt-get install -y libgtk2.0-dev
+RUN apt-get install -y libgtk2.0
 RUN apt-get install -y cpio
 RUN apt-get install -y libgtk-3*
 RUN apt-get install -y libxss1*
