@@ -10,11 +10,11 @@ RUN apt-get install -y cmake
 
 #Install libs (PSXE needed)
 #RUN apt-get install -y libgtk2.0
-RUN apt-get install -y cpio
 RUN apt-get install -y libgtk-3*
 RUN apt-get install -y libxss1*
 RUN apt-get install -y libnss3
 RUN apt-get install -y libasound2
+RUN apt-get install -y cpio
 
 #Set up directory
 RUN mkdir /home/cluster \
