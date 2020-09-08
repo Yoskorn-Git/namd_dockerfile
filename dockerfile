@@ -7,8 +7,12 @@ RUN apt-get install -y git
 RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 g++-8
 RUN apt-get install -y cmake
-RUN apt-get install -y tcl
-RUN apt-get install -y tcl8.6-dev
+# RUN apt-get install -y tcl
+# RUN apt-get install -y tcl8.6-dev
+RUN apt-get install -y build-essential
+RUN apt-get install -y libtool
+RUN apt-get install -y libssl-dev
+
 
 #Install libs (PSXE needed)
 # RUN apt-get install -y libgtk2.0
@@ -17,6 +21,14 @@ RUN apt-get install -y tcl8.6-dev
 # RUN apt-get install -y libnss3
 # RUN apt-get install -y libasound2
 RUN apt-get install -y cpio
+
+RUN mkdir /home/download && cd /home/download \
+    && wget https://cmake.org/files/v3.16/cmake-3.16.4.tar.gz \
+    && tar -xvf cmake-3.16.4.tar.gz \
+    && cd cmake-3.16.4 \
+    && ./bootstrap \
+    && make \
+    && make install
 
 #Set up directory
 RUN mkdir /home/cluster \
@@ -41,12 +53,12 @@ RUN	cd /home/cluster/thor/application/mpi \
     && tar -xvf hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-4.7-1.0.0.1-redhat7.7-x86_64.tbz 
 
 #Download Intel parallel studio XE 2020 update 1
-RUN	mkdir /home/download && cd /home/download \
-    && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
-    && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz 
-    # && cd /home/download/parallel_studio_xe_2020_update1_cluster_edition \
-    # && rm silent.cfg \
-    # && wget https://transfer.sh/Bvg34/silent.cfg
+#     && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
+#     && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz \
+#     && cd /home/download/parallel_studio_xe_2020_update1_cluster_edition \
+#     && rm silent.cfg \
+#     && wget https://transfer.sh/Bvg34/silent.cfg \
+#     && ./install.sh --silent=silent.cfg
 
 
 
