@@ -9,7 +9,7 @@ RUN apt-get install -y gcc-8 g++-8
 RUN apt-get install -y cmake
 
 #Install libs (PSXE needed)
-#RUN apt-get install -y libgtk2.0
+RUN apt-get install -y libgtk2.0
 RUN apt-get install -y libgtk-3*
 RUN apt-get install -y libxss1*
 RUN apt-get install -y libnss3
@@ -29,7 +29,7 @@ RUN git clone --bare https://github.com/UIUC-PPL/charm.git	\
 RUN git clone --bare https://charm.cs.illinois.edu/gerrit/namd.git \			
 	/home/github/namd.git 
 
-# #Download fftw3ls
+# #Download fftw3
 RUN	mkdir /home/code && cd /home/code \
     && wget http://www.fftw.org/fftw-3.3.8.tar.gz
 
@@ -41,10 +41,10 @@ RUN	cd /home/cluster/thor/application/mpi \
 #Download Intel parallel studio XE 2020 update 1
 RUN	mkdir /home/download && cd /home/download \
     && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
-    && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz \
-    && cd /home/download/parallel_studio_xe_2020_update1_cluster_edition \
-    && rm silent.cfg \
-    && wget https://transfer.sh/Bvg34/silent.cfg
+    && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz 
+    # && cd /home/download/parallel_studio_xe_2020_update1_cluster_edition \
+    # && rm silent.cfg \
+    # && wget https://transfer.sh/Bvg34/silent.cfg
 
 
 
