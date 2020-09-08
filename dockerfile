@@ -7,6 +7,7 @@ RUN apt-get install -y git
 RUN apt-get install -y wget
 RUN apt-get install -y gcc-8 g++-8
 RUN apt-get install -y cmake
+RUN apt-get install -y tcl
 RUN apt-get install -y tcl8.6-dev
 
 #Install libs (PSXE needed)
