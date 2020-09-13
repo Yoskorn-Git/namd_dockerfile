@@ -54,7 +54,8 @@ RUN	cd /home/cluster/thor/application/mpi \
 
 #Download Intel parallel studio XE 2020 update 1
 RUN cd /home/download \
-    && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
+    && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition_online.tgz \
+#   && wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16526/parallel_studio_xe_2020_update1_cluster_edition.tgz \
     && tar -xvf parallel_studio_xe_2020_update1_cluster_edition.tgz 
 #     && cd /home/download/parallel_studio_xe_2020_update1_cluster_edition \
 #     && rm silent.cfg \
