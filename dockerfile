@@ -5,6 +5,8 @@ FROM ubuntu:16.04
 RUN	apt-get update -y
 RUN apt-get install -y software-properties-common python-software-properties
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
+RUN	apt-get update -y
+
 RUN apt-get install -y git
 RUN apt-get install -y wget
 RUN apt-get install -y gcc-8
