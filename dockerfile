@@ -5,7 +5,8 @@ FROM ubuntu:16.04
 RUN	apt-get update 
 RUN apt-get install -y git
 RUN apt-get install -y wget
-RUN apt-get install -y gcc-8 g++-8
+RUN apt-get install -y gcc-8
+RUN apt-get install -y g++-8
 RUN apt-get install -y cmake
 # RUN apt-get install -y tcl
 # RUN apt-get install -y tcl8.6-dev
