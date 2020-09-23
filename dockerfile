@@ -1,5 +1,5 @@
 #Install Images
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 #Install libs
 RUN	apt-get update 
@@ -12,6 +12,8 @@ RUN apt-get install -y cmake
 RUN apt-get install -y build-essential
 RUN apt-get install -y libtool
 RUN apt-get install -y libssl-dev
+
+RUN apt-get install -y fftw3
 
 
 #Install libs (PSXE needed)
@@ -31,11 +33,11 @@ RUN mkdir /home/download && cd /home/download \
     && make install
 
 #Set up directory
-RUN mkdir /home/cluster \
-    && mkdir /home/cluster/thor \
-    && mkdir /home/cluster/thor/code \
-    && mkdir /home/cluster/thor/application \
-    && mkdir /home/cluster/thor/application/mpi
+# RUN mkdir /home/cluster \
+#     && mkdir /home/cluster/thor \
+#     && mkdir /home/cluster/thor/code \
+#     && mkdir /home/cluster/thor/application \
+#     && mkdir /home/cluster/thor/application/mpi
 	
 # #Clone git charm.git, namd.git
 RUN git clone --bare https://github.com/UIUC-PPL/charm.git	\
@@ -44,8 +46,8 @@ RUN git clone --bare https://charm.cs.illinois.edu/gerrit/namd.git \
 	/home/github/namd.git 
 
 # #Download fftw3
-RUN	mkdir /home/code && cd /home/code \
-    && wget http://www.fftw.org/fftw-3.3.8.tar.gz
+# RUN	mkdir /home/code && cd /home/code \
+#     && wget http://www.fftw.org/fftw-3.3.8.tar.gz
 
 # #Download and Untar hpcx v2.6.0
 RUN	cd /home/cluster/thor/application/mpi \
