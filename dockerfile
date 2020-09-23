@@ -2,11 +2,15 @@
 FROM ubuntu:16.04
 
 #Install libs
+
+RUN apt-get install -y software-properties-common python-software-properties
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN	apt-get update 
 RUN apt-get install -y git
 RUN apt-get install -y wget
 RUN apt-get install -y gcc-8
 RUN apt-get install -y g++-8
+
 RUN apt-get install -y cmake
 # RUN apt-get install -y tcl
 # RUN apt-get install -y tcl8.6-dev
